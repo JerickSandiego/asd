@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOOO9 Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: #fff;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.7) 50%), url('3.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            color: #ff7200;
+            font-weight: bold;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu ul li {
+            margin: 0 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #ff7200;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .content span {
+            color: #ff7200;
+        }
+
+        .content p {
+            max-width: 600px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff7200;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #ff7200;
+        }
+
+        .form {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+        }
+
+        .form .btn {
+            width: 100%;
+        }
+
+        .social-iconss {
+            margin-top: 20px;
+        }
+
+        .social-iconss a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #ff7200;
+            transition: 0.3s;
+        }
+
+        .social-iconss a:hover {
+            color: #fff;
+        }
+
+        .section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .text-content {
+            flex: 2;
+        }
+
+        .text-content h2 {
+            margin-bottom: 20px;
+            color: #ff7200;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .services {
+            width: 100%;
+            min-height: 100vh;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ff7200;
+        }
+
+        .service-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+        }
+
+        .service-item {
+            background: #292929;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        #contact {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.9) 50%);
+    color: #fff;
+}
+
+#contact .container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#contact h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #ff7200;
+}
+
+#contact p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #ff7200;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+footer {
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+}
+
+footer span {
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">HOOO9</div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="content">
+            <h1>Innovating the Future with <br><span>HOOO9 Technology</span></h1>
+            <p>At HOOO9, we strive to transform ideas into cutting-edge solutions. Join us in shaping a smarter, connected tomorrow.</p>
+            <a href="#" class="btn">Join Us!</a>
+        </div>
+
+        <div class="form">
+            <h2>Login</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <a href="#" class="btn">Login</a>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+            <div class="social-iconss">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="mission-vision">
+        <div class="mission-vision">
+            <div class="text-content">
+                <h2>Our Mission</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae turpis tincidunt, mollis urna vel, tincidunt eros. Etiam ac dignissim urna.</p>
+                <h2>Our Vision</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula, justo at dictum consectetur, enim elit blandit justo, ut tincidunt felis purus in mi.</p>
+            </div>
+            <div class="image-content">
+                <img src="4.jpg" alt="Mission and Vision Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <img src="placeholder.jpg" alt="Service 1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="placeholder.jpg" alt="Service 2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="placeholder.jpg" alt="Service 3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="contact">
+        <div class="container">
+            <div class="left-content">
+                <p><strong>Contact No.:</strong> +63 967 291 2075</p>
+                <p><strong>Email:</strong> sandiegojerick957@gmail.com</p>
+                <p><strong>Address:</strong> FEU Institute of Technology</p>
+            </div>
+    
+            <div class="right-content">
+                <h2>We are waiting!</h2>
+                <div class="social-icons">
+                    <p>Social Media</p>
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <span>&copy; 2025</span>, this website is made for educational purposes only.
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
